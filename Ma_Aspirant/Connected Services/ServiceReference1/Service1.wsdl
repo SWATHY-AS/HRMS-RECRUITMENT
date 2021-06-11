@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://10.0.0.111/RecruitmentService/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://10.0.0.111/RecruitmentService/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://10.0.0.111/RecruitmentService/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+      <xsd:import schemaLocation="http://10.0.0.111/RecruitmentService/Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EnrolDocumentUpload_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnrolDocumentUpload" />
+  </wsdl:message>
+  <wsdl:message name="IService_EnrolDocumentUpload_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnrolDocumentUploadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_get_data_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_data" />
+  </wsdl:message>
+  <wsdl:message name="IService_get_data_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_dataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getdata_login_InputMessage">
+    <wsdl:part name="parameters" element="tns:getdata_login" />
+  </wsdl:message>
+  <wsdl:message name="IService_getdata_login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getdata_loginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_nominee_data_InputMessage">
+    <wsdl:part name="parameters" element="tns:nominee_data" />
+  </wsdl:message>
+  <wsdl:message name="IService_nominee_data_OutputMessage">
+    <wsdl:part name="parameters" element="tns:nominee_dataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_select_tds_data_InputMessage">
+    <wsdl:part name="parameters" element="tns:select_tds_data" />
+  </wsdl:message>
+  <wsdl:message name="IService_select_tds_data_OutputMessage">
+    <wsdl:part name="parameters" element="tns:select_tds_dataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_proc_hrm_common_select_InputMessage">
+    <wsdl:part name="parameters" element="tns:proc_hrm_common_select" />
+  </wsdl:message>
+  <wsdl:message name="IService_proc_hrm_common_select_OutputMessage">
+    <wsdl:part name="parameters" element="tns:proc_hrm_common_selectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_BAEnrollment_InputMessage">
+    <wsdl:part name="parameters" element="tns:BAEnrollment" />
+  </wsdl:message>
+  <wsdl:message name="IService_BAEnrollment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BAEnrollmentResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService">
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetDataUsingDataContract" message="tns:IService_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetDataUsingDataContractResponse" message="tns:IService_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnrolDocumentUpload">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EnrolDocumentUpload" message="tns:IService_EnrolDocumentUpload_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EnrolDocumentUploadResponse" message="tns:IService_EnrolDocumentUpload_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_data">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/get_data" message="tns:IService_get_data_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/get_dataResponse" message="tns:IService_get_data_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getdata_login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getdata_login" message="tns:IService_getdata_login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getdata_loginResponse" message="tns:IService_getdata_login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="nominee_data">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/nominee_data" message="tns:IService_nominee_data_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/nominee_dataResponse" message="tns:IService_nominee_data_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="select_tds_data">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/select_tds_data" message="tns:IService_select_tds_data_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/select_tds_dataResponse" message="tns:IService_select_tds_data_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="proc_hrm_common_select">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/proc_hrm_common_select" message="tns:IService_proc_hrm_common_select_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/proc_hrm_common_selectResponse" message="tns:IService_proc_hrm_common_select_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BAEnrollment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/BAEnrollment" message="tns:IService_BAEnrollment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/BAEnrollmentResponse" message="tns:IService_BAEnrollment_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IService/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnrolDocumentUpload">
+      <soap:operation soapAction="http://tempuri.org/IService/EnrolDocumentUpload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_data">
+      <soap:operation soapAction="http://tempuri.org/IService/get_data" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getdata_login">
+      <soap:operation soapAction="http://tempuri.org/IService/getdata_login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="nominee_data">
+      <soap:operation soapAction="http://tempuri.org/IService/nominee_data" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="select_tds_data">
+      <soap:operation soapAction="http://tempuri.org/IService/select_tds_data" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="proc_hrm_common_select">
+      <soap:operation soapAction="http://tempuri.org/IService/proc_hrm_common_select" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BAEnrollment">
+      <soap:operation soapAction="http://tempuri.org/IService/BAEnrollment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
+      <soap:address location="http://10.0.0.111/RecruitmentService/Service.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

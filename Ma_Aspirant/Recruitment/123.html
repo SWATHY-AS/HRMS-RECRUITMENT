@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>QR Code Scanner</title>
+	<script src="../App_Themes/Theme/Scanner/jquery.min.js"></script>
+	<script src="../App_Themes/Theme/Scanner/scanner.js"></script>
+</head>
+<body>
+
+    <h1>QR Code Scanner</h1>
+    Name: <input type="text" id="Label1" />
+    age: <input type="text" id="id1" />
+
+    <video id="preview"></video>
+
+
+
+    <script type="text/javascript">
+   
+        let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+       
+        scanner.addListener('scan', function (content) {
+            alert(content);
+           // document.getElementById('Label1').innerText = content;           
+           
+            var res = content.substring(63); 
+            alert(res); 
+            var arr = res.split('" ');      
+
+            var uid = arr[0];
+            var name = arr[1];
+            var gender = arr[2];
+            var yob = arr[3];
+            var co = arr[4];
+            var house = arr[5];
+            var street = arr[6];
+            var vtc = arr[7];
+            var po = arr[8];
+            var dist = arr[9];
+            var subdist = arr[10];
+            var state = arr[11];
+            var pc = arr[12];
+            var db = arr[13];           
+           
+            var Aduid = splitcommon(uid);
+            var Adname = splitcommon(name);
+            var Adgender = splitcommon(gender);
+            var Adyob = splitcommon(yob);
+            var Adco = splitcommon(co);
+            var Adhouse = splitcommon(house);
+            var Adstreet = splitcommon(street);
+            var Advtc = splitcommon(vtc);
+            var Adpo = splitcommon(po);
+            var Addist = splitcommon(dist);
+            var Adsubdist = splitcommon(subdist);
+            var Adstate = splitcommon(state);
+            var Adpc = splitcommon(pc);           
+            var dob = splitcommon(db);
+            var Addob = dob.split('"/>');
+           
+         
+           
+        });
+        Instascan.Camera.getCameras().then(function (cameras) {
+            if (cameras.length > 0) {
+                scanner.start(cameras[0]);
+            } else {
+                console.error('No cameras found.');
+            }
+        }).catch(function (e) {
+            console.error(e);
+            });
+        function splitcommon(sting) {
+
+            var res = sting.split('="');
+            alert("1");           
+            return res[1];
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,814 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1C108DD6-EA8A-4D43-AF7D-68634DA4D378}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ma_Aspirant</RootNamespace>
+    <AssemblyName>Ma_Aspirant</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\Ma_AppSuite\Ma_AppSuite\bin\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Rec_service\Bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="sinfini_Manappuramhr, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\334099\Desktop\sinfini_Manappuramhr.dll</HintPath>
+    </Reference>
+    <Reference Include="solution_infini_flag, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\334099\Downloads\solution_infini_flag.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Application.aspx" />
+    <Content Include="App_Themes\Theme\assets\css\error.css" />
+    <Content Include="App_Themes\Theme\assets\css\fontawesome\font-awesome.min.css" />
+    <Content Include="App_Themes\Theme\assets\css\font\fontawesome-webfont.svg" />
+    <Content Include="App_Themes\Theme\assets\css\icons.css" />
+    <Content Include="App_Themes\Theme\assets\css\login.css" />
+    <Content Include="App_Themes\Theme\assets\css\main.css" />
+    <Content Include="App_Themes\Theme\assets\css\mana.css" />
+    <Content Include="App_Themes\Theme\assets\css\plugins.css" />
+    <Content Include="App_Themes\Theme\assets\css\plugins\bootstrap-colorpicker.css" />
+    <Content Include="App_Themes\Theme\assets\css\plugins\bootstrap-multiselect.css" />
+    <Content Include="App_Themes\Theme\assets\css\plugins\bootstrap-switch.css" />
+    <Content Include="App_Themes\Theme\assets\css\plugins\bootstrap-wizard.css" />
+    <Content Include="App_Themes\Theme\assets\css\plugins\bootstrap-wysihtml5.css" />
+    <Content Include="App_Themes\Theme\assets\css\plugins\datatables.css" />
+    <Content Include="App_Themes\Theme\assets\css\plugins\datatables_bootstrap.css" />
+    <Content Include="App_Themes\Theme\assets\css\plugins\daterangepicker.css" />
+    <Content Include="App_Themes\Theme\assets\css\plugins\duallistbox.css" />
+    <Content Include="App_Themes\Theme\assets\css\plugins\fullcalendar.css" />
+    <Content Include="App_Themes\Theme\assets\css\plugins\jquery-ui.css" />
+    <Content Include="App_Themes\Theme\assets\css\plugins\nestable.css" />
+    <Content Include="App_Themes\Theme\assets\css\plugins\nprogress.css" />
+    <Content Include="App_Themes\Theme\assets\css\plugins\pickadate.css" />
+    <Content Include="App_Themes\Theme\assets\css\plugins\select2.css" />
+    <Content Include="App_Themes\Theme\assets\css\plugins\tagsinput.css" />
+    <Content Include="App_Themes\Theme\assets\css\plugins\typeahead.css" />
+    <Content Include="App_Themes\Theme\assets\css\plugins\uniform.css" />
+    <Content Include="App_Themes\Theme\assets\css\responsive.css" />
+    <Content Include="App_Themes\Theme\assets\css\test.css" />
+    <Content Include="App_Themes\Theme\assets\img\demo\avatar-1.jpg" />
+    <Content Include="App_Themes\Theme\assets\img\demo\avatar-2.jpg" />
+    <Content Include="App_Themes\Theme\assets\img\demo\avatar-3.jpg" />
+    <Content Include="App_Themes\Theme\assets\img\demo\avatar-large.jpg" />
+    <Content Include="App_Themes\Theme\assets\img\favicon-16x16.png" />
+    <Content Include="App_Themes\Theme\assets\img\icons\iconsweets\icos-dark.png" />
+    <Content Include="App_Themes\Theme\assets\img\icons\iconsweets\icos-white.png" />
+    <Content Include="App_Themes\Theme\assets\img\icons\led\sprite.png" />
+    <Content Include="App_Themes\Theme\assets\img\k-9-t-7462-100a.jpg" />
+    <Content Include="App_Themes\Theme\assets\img\lll.png" />
+    <Content Include="App_Themes\Theme\assets\img\logo.png" />
+    <Content Include="App_Themes\Theme\assets\img\manappuram_50.png" />
+    <Content Include="App_Themes\Theme\assets\img\processing_latest1.gif" />
+    <Content Include="App_Themes\Theme\assets\img\sidebar\sidebar-divider-dots.png" />
+    <Content Include="App_Themes\Theme\assets\img\THANK-YOU-YELLOW.png" />
+    <Content Include="App_Themes\Theme\assets\img\thumbnail_image001.png" />
+    <Content Include="App_Themes\Theme\assets\img\ufMShOh4JW.png" />
+    <Content Include="App_Themes\Theme\assets\js\app.js" />
+    <Content Include="App_Themes\Theme\assets\js\appli_new.js" />
+    <Content Include="App_Themes\Theme\assets\js\BHlogin_new.js" />
+    <Content Include="App_Themes\Theme\assets\js\cand_docupload.js" />
+    <Content Include="App_Themes\Theme\assets\js\BHlogin.js" />
+    <Content Include="App_Themes\Theme\assets\js\BHtabs.js" />
+    <Content Include="App_Themes\Theme\assets\js\family.js" />
+    <Content Include="App_Themes\Theme\assets\js\family_HO.js" />
+    <Content Include="App_Themes\Theme\assets\js\Hlogin_new.js" />
+    <Content Include="App_Themes\Theme\assets\js\Htabs.js" />
+    <Content Include="App_Themes\Theme\assets\js\loginHO.js" />
+    <Content Include="App_Themes\Theme\assets\js\online.js" />
+    <Content Include="App_Themes\Theme\assets\js\op_ho.js" />
+    <Content Include="App_Themes\Theme\assets\js\ovload.js" />
+    <Content Include="App_Themes\Theme\assets\js\personal_backup.js" />
+    <Content Include="App_Themes\Theme\assets\js\personal_det.js" />
+    <Content Include="App_Themes\Theme\assets\js\personal_det_HO.js" />
+    <Content Include="App_Themes\Theme\assets\js\personal_HO.js" />
+    <Content Include="App_Themes\Theme\assets\js\reference.js" />
+    <Content Include="App_Themes\Theme\assets\js\reference_HO.js" />
+    <Content Include="App_Themes\Theme\assets\js\salary.js" />
+    <Content Include="App_Themes\Theme\assets\js\custom.js" />
+    <Content Include="App_Themes\Theme\assets\js\demo\charts.js" />
+    <Content Include="App_Themes\Theme\assets\js\demo\charts\chart_bars_horizontal.js" />
+    <Content Include="App_Themes\Theme\assets\js\demo\charts\chart_bars_vertical.js" />
+    <Content Include="App_Themes\Theme\assets\js\demo\charts\chart_donut.js" />
+    <Content Include="App_Themes\Theme\assets\js\demo\charts\chart_filled_blue.js" />
+    <Content Include="App_Themes\Theme\assets\js\demo\charts\chart_filled_green.js" />
+    <Content Include="App_Themes\Theme\assets\js\demo\charts\chart_filled_red.js" />
+    <Content Include="App_Themes\Theme\assets\js\demo\charts\chart_multiple.js" />
+    <Content Include="App_Themes\Theme\assets\js\demo\charts\chart_pie.js" />
+    <Content Include="App_Themes\Theme\assets\js\demo\charts\chart_selection_zooming.js" />
+    <Content Include="App_Themes\Theme\assets\js\demo\charts\chart_simple.js" />
+    <Content Include="App_Themes\Theme\assets\js\demo\charts\chart_updating.js" />
+    <Content Include="App_Themes\Theme\assets\js\demo\charts\chart_widget.js" />
+    <Content Include="App_Themes\Theme\assets\js\demo\form_components.js" />
+    <Content Include="App_Themes\Theme\assets\js\demo\form_validation.js" />
+    <Content Include="App_Themes\Theme\assets\js\demo\form_wizard.js" />
+    <Content Include="App_Themes\Theme\assets\js\demo\google_maps.js" />
+    <Content Include="App_Themes\Theme\assets\js\demo\pages_calendar.js" />
+    <Content Include="App_Themes\Theme\assets\js\demo\ui_buttons.js" />
+    <Content Include="App_Themes\Theme\assets\js\demo\ui_general.js" />
+    <Content Include="App_Themes\Theme\assets\js\demo\ui_nestable_list.js" />
+    <Content Include="App_Themes\Theme\assets\js\demo\ui_sliders.js" />
+    <Content Include="App_Themes\Theme\assets\js\candidateindex.js" />
+    <Content Include="App_Themes\Theme\assets\js\personal.js" />
+    <Content Include="App_Themes\Theme\assets\js\libs\angular.min.js" />
+    <Content Include="App_Themes\Theme\assets\js\libs\breakpoints.js" />
+    <Content Include="App_Themes\Theme\assets\js\libs\jquery-1.10.2.min.js" />
+    <Content Include="App_Themes\Theme\assets\js\libs\jquery-latest.js" />
+    <Content Include="App_Themes\Theme\assets\js\libs\lodash.compat.min.js" />
+    <Content Include="App_Themes\Theme\assets\js\libs\resignation.js" />
+    <Content Include="App_Themes\Theme\assets\js\login.js" />
+    <Content Include="App_Themes\Theme\assets\js\plugins.form-components.js" />
+    <Content Include="App_Themes\Theme\assets\js\plugins.js" />
+    <Content Include="App_Themes\Theme\assets\js\webcam.js" />
+    <Content Include="App_Themes\Theme\assets\js\webcam.min.js" />
+    <Content Include="App_Themes\Theme\bootstrap\css\bootstrap.min.css" />
+    <Content Include="App_Themes\Theme\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="App_Themes\Theme\bootstrap\js\bootstrap.min.js" />
+    <Content Include="App_Themes\Theme\Scanner\jquery.min.js" />
+    <Content Include="App_Themes\Theme\Scanner\scanner.js" />
+    <Content Include="App_Themes\Theme\plugins\autosize\jquery.autosize.min.js" />
+    <Content Include="App_Themes\Theme\plugins\blockui\jquery.blockUI.min.js" />
+    <Content Include="App_Themes\Theme\plugins\bootbox\bootbox.min.js" />
+    <Content Include="App_Themes\Theme\plugins\bootstrap-colorpicker\bootstrap-colorpicker.min.js" />
+    <Content Include="App_Themes\Theme\plugins\bootstrap-colorpicker\img\alpha.png" />
+    <Content Include="App_Themes\Theme\plugins\bootstrap-colorpicker\img\hue.png" />
+    <Content Include="App_Themes\Theme\plugins\bootstrap-colorpicker\img\saturation.png" />
+    <Content Include="App_Themes\Theme\plugins\bootstrap-inputmask\jquery.inputmask.min.js" />
+    <Content Include="App_Themes\Theme\plugins\bootstrap-multiselect\bootstrap-multiselect.min.js" />
+    <Content Include="App_Themes\Theme\plugins\bootstrap-switch\bootstrap-switch.min.js" />
+    <Content Include="App_Themes\Theme\plugins\bootstrap-wizard\jquery.bootstrap.wizard.min.js" />
+    <Content Include="App_Themes\Theme\plugins\bootstrap-wysihtml5\bootstrap-wysihtml5.min.js" />
+    <Content Include="App_Themes\Theme\plugins\bootstrap-wysihtml5\wysihtml5.min.js" />
+    <Content Include="App_Themes\Theme\plugins\cookie\jquery.cookie.min.js" />
+    <Content Include="App_Themes\Theme\plugins\datatables\columnfilter\jquery.dataTables.columnFilter.js" />
+    <Content Include="App_Themes\Theme\plugins\datatables\colvis\ColVis.min.js" />
+    <Content Include="App_Themes\Theme\plugins\datatables\DT_bootstrap.js" />
+    <Content Include="App_Themes\Theme\plugins\datatables\img\sort_asc.png" />
+    <Content Include="App_Themes\Theme\plugins\datatables\img\sort_asc_disabled.png" />
+    <Content Include="App_Themes\Theme\plugins\datatables\img\sort_both.png" />
+    <Content Include="App_Themes\Theme\plugins\datatables\img\sort_desc.png" />
+    <Content Include="App_Themes\Theme\plugins\datatables\img\sort_desc_disabled.png" />
+    <Content Include="App_Themes\Theme\plugins\datatables\jquery.dataTables.min.js" />
+    <Content Include="App_Themes\Theme\plugins\datatables\responsive\datatables.responsive.js" />
+    <Content Include="App_Themes\Theme\plugins\datatables\responsive\img\minus.png" />
+    <Content Include="App_Themes\Theme\plugins\datatables\responsive\img\plus.png" />
+    <Content Include="App_Themes\Theme\plugins\datatables\tabletools\TableTools.min.js" />
+    <Content Include="App_Themes\Theme\plugins\daterangepicker\daterangepicker.js" />
+    <Content Include="App_Themes\Theme\plugins\daterangepicker\moment.min.js" />
+    <Content Include="App_Themes\Theme\plugins\duallistbox\jquery.duallistbox.min.js" />
+    <Content Include="App_Themes\Theme\plugins\easy-pie-chart\jquery.easy-pie-chart.min.js" />
+    <Content Include="App_Themes\Theme\plugins\event.swipe\jquery.event.move.js" />
+    <Content Include="App_Themes\Theme\plugins\event.swipe\jquery.event.swipe.js" />
+    <Content Include="App_Themes\Theme\plugins\fileinput\fileinput.js" />
+    <Content Include="App_Themes\Theme\plugins\flot\jquery.flot.growraf.min.js" />
+    <Content Include="App_Themes\Theme\plugins\flot\jquery.flot.min.js" />
+    <Content Include="App_Themes\Theme\plugins\flot\jquery.flot.orderBars.min.js" />
+    <Content Include="App_Themes\Theme\plugins\flot\jquery.flot.pie.min.js" />
+    <Content Include="App_Themes\Theme\plugins\flot\jquery.flot.resize.min.js" />
+    <Content Include="App_Themes\Theme\plugins\flot\jquery.flot.selection.min.js" />
+    <Content Include="App_Themes\Theme\plugins\flot\jquery.flot.time.min.js" />
+    <Content Include="App_Themes\Theme\plugins\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="App_Themes\Theme\plugins\fullcalendar\fullcalendar.min.js" />
+    <Content Include="App_Themes\Theme\plugins\globalize\cultures\globalize.culture.de-DE.js" />
+    <Content Include="App_Themes\Theme\plugins\globalize\cultures\globalize.culture.ja-JP.js" />
+    <Content Include="App_Themes\Theme\plugins\globalize\globalize.js" />
+    <Content Include="App_Themes\Theme\plugins\gmaps\gmaps.min.js" />
+    <Content Include="App_Themes\Theme\plugins\inputlimiter\jquery.inputlimiter.min.js" />
+    <Content Include="App_Themes\Theme\plugins\jquery-ui\images\ui-icons_cccccc_256x240.png" />
+    <Content Include="App_Themes\Theme\plugins\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="App_Themes\Theme\plugins\jquery-ui\jquery-ui-1.10.2.custom.min.js" />
+    <Content Include="App_Themes\Theme\plugins\knob\jquery.knob.min.js" />
+    <Content Include="App_Themes\Theme\plugins\nestable\jquery.nestable.min.js" />
+    <Content Include="App_Themes\Theme\plugins\noty\jquery.noty.js" />
+    <Content Include="App_Themes\Theme\plugins\noty\layouts\top.js" />
+    <Content Include="App_Themes\Theme\plugins\noty\themes\default.js" />
+    <Content Include="App_Themes\Theme\plugins\nprogress\nprogress.js" />
+    <Content Include="App_Themes\Theme\plugins\pickadate\picker.date.js" />
+    <Content Include="App_Themes\Theme\plugins\pickadate\picker.js" />
+    <Content Include="App_Themes\Theme\plugins\pickadate\picker.time.js" />
+    <Content Include="App_Themes\Theme\plugins\respond\respond.min.js" />
+    <Content Include="App_Themes\Theme\plugins\select2\select2-spinner.gif" />
+    <Content Include="App_Themes\Theme\plugins\select2\select2.min.js" />
+    <Content Include="App_Themes\Theme\plugins\select2\select2.png" />
+    <Content Include="App_Themes\Theme\plugins\select2\select2x2.png" />
+    <Content Include="App_Themes\Theme\plugins\slimscroll\jquery.slimscroll.horizontal.min.js" />
+    <Content Include="App_Themes\Theme\plugins\slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="App_Themes\Theme\plugins\sparkline\jquery.sparkline.min.js" />
+    <Content Include="App_Themes\Theme\plugins\tagsinput\jquery.tagsinput.min.js" />
+    <Content Include="App_Themes\Theme\plugins\touchpunch\jquery.ui.touch-punch.min.js" />
+    <Content Include="App_Themes\Theme\plugins\typeahead\typeahead.min.js" />
+    <Content Include="App_Themes\Theme\plugins\uniform\images\bg-input-focus.png" />
+    <Content Include="App_Themes\Theme\plugins\uniform\images\bg-input.png" />
+    <Content Include="App_Themes\Theme\plugins\uniform\images\sprite.png" />
+    <Content Include="App_Themes\Theme\plugins\uniform\jquery.uniform.min.js" />
+    <Content Include="App_Themes\Theme\plugins\validation\additional-methods.min.js" />
+    <Content Include="App_Themes\Theme\plugins\validation\jquery.validate.min.js" />
+    <Content Include="Auction\AucRec.aspx" />
+    <Content Include="Auction\AucRen.aspx" />
+    <Content Include="Auction\auction.js" />
+    <Content Include="Auction\auctionRen.js" />
+    <Content Include="BA\baenrol.js" />
+    <Content Include="BA\BAEnroll.aspx" />
+    <Content Include="BA\baren.js" />
+    <Content Include="BA\BARenew.aspx" />
+    <Content Include="BA\termsandconditions.aspx" />
+    <Content Include="BH_Login.aspx" />
+    <Content Include="Candidate_Index.aspx" />
+    <Content Include="Candidate.Master" />
+    <Content Include="Connected Services\ServiceReference1\Ma_Aspirant.ServiceReference1.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Auction\AucMstr.Master" />
+    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Service1.disco" />
+    <Content Include="HO_Admin\H_Login.aspx" />
+    <Content Include="HO_Admin\H_notific.aspx" />
+    <Content Include="HO_Admin\H_Verify.aspx" />
+    <Content Include="HO_Website\candidate_photo_HO.aspx" />
+    <Content Include="HO_Website\Doc_Scanning_HO.aspx" />
+    <Content Include="HO_Website\Experience_HO.aspx" />
+    <Content Include="HO_Website\family_status_HO.aspx" />
+    <Content Include="HO_Website\HoWebsites.aspx" />
+    <Content Include="HO_Website\Job_Search.aspx" />
+    <Content Include="HO_Website\Login_HO.aspx" />
+    <Content Include="HO_Website\Personal_Details_HO.aspx" />
+    <Content Include="HO_Website\Personal_Info_HO.aspx" />
+    <Content Include="HO_Website\qualification_HO.aspx" />
+    <Content Include="HO_Website\Reference_per_HO.aspx" />
+    <Content Include="Images\induction.pdf" />
+    <Content Include="Images\progressimg.jfif" />
+    <Content Include="logout_Admin.aspx" />
+    <Content Include="logout_HO.aspx" />
+    <Content Include="Oppurtunity_HO.aspx" />
+    <Content Include="Recruitment\Aadharupload.aspx" />
+    <Content Include="Recruitment\candidate_photo.aspx" />
+    <Content Include="Recruitment\family_status.aspx" />
+    <Content Include="Recruitment\ImageConversions.aspx" />
+    <Content Include="Recruitment\online_test_page.aspx" />
+    <Content Include="Recruitment\phonapp.html" />
+    <Content Include="Recruitment\qualification.aspx" />
+    <Content Include="Salary\common_nomination_form.aspx" />
+    <Content Include="WebcamResources\save_picture.swf" />
+    <Content Include="Webcam_Plugin\jquery.webcam.js" />
+    <Content Include="Webcam_Plugin\jscam.swf" />
+    <Content Include="Webcam_Plugin\jscam_canvas_only.swf" />
+    <Content Include="Images\testmanappuram.png" />
+    <Content Include="index.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="logout.aspx" />
+    <Content Include="Opprtunity.aspx" />
+    <Content Include="Recruitment\123.html" />
+    <Content Include="Recruitment\aaupload.html" />
+    <Content Include="Recruitment\base.html" />
+    <Content Include="Recruitment\photoup.aspx" />
+    <Content Include="Recruitment\QRCode_Reader.aspx" />
+    <Content Include="Recruitment\BH_notific.aspx" />
+    <Content Include="Recruitment\BH_Verify.aspx" />
+    <Content Include="Recruitment\Doc_Scanning.aspx" />
+    <Content Include="Recruitment\Personal_Details.aspx" />
+    <Content Include="Recruitment\Personal_Info.aspx" />
+    <None Include="Connected Services\ServiceReference1\Service1.wsdl" />
+    <None Include="Connected Services\ServiceReference1\Service4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Service41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Service42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Service43.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="HO_Admin.Master" />
+    <Content Include="Main_HO.Master" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Recruitment\Photo_Upload.aspx" />
+    <Content Include="Recruitment\Reference_per.aspx" />
+    <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <Content Include="WebcamResources\com\adobe\images\BitString.as" />
+    <Content Include="WebcamResources\com\adobe\images\JPGEncoder.as" />
+    <Content Include="WebcamResources\com\adobe\images\PNGEncoder.as" />
+    <Content Include="WebcamResources\com\adobe\images\vssver2.scc" />
+    <Content Include="WebcamResources\com\dynamicflash\.DS_Store" />
+    <Content Include="WebcamResources\com\dynamicflash\util\.DS_Store" />
+    <Content Include="WebcamResources\com\dynamicflash\util\Base64.as" />
+    <Content Include="WebcamResources\com\dynamicflash\util\tests\Base64Test.as" />
+    <Content Include="WebcamResources\com\dynamicflash\util\tests\vssver2.scc" />
+    <Content Include="WebcamResources\com\dynamicflash\util\vssver2.scc" />
+    <Content Include="WebcamResources\com\dynamicflash\vssver2.scc" />
+    <Content Include="WebcamResources\save_picture.fla" />
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Training\Induction_Manual.pdf" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application.aspx.cs">
+      <DependentUpon>Application.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application.aspx.designer.cs">
+      <DependentUpon>Application.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Auction\AucMstr.Master.cs">
+      <DependentUpon>AucMstr.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Auction\AucMstr.Master.designer.cs">
+      <DependentUpon>AucMstr.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Auction\AucRec.aspx.cs">
+      <DependentUpon>AucRec.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Auction\AucRec.aspx.designer.cs">
+      <DependentUpon>AucRec.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Auction\AucRen.aspx.cs">
+      <DependentUpon>AucRen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Auction\AucRen.aspx.designer.cs">
+      <DependentUpon>AucRen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BA\BAEnroll.aspx.cs">
+      <DependentUpon>BAEnroll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BA\BAEnroll.aspx.designer.cs">
+      <DependentUpon>BAEnroll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BA\BARenew.aspx.cs">
+      <DependentUpon>BARenew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BA\BARenew.aspx.designer.cs">
+      <DependentUpon>BARenew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BA\termsandconditions.aspx.cs">
+      <DependentUpon>termsandconditions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BA\termsandconditions.aspx.designer.cs">
+      <DependentUpon>termsandconditions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BH_Login.aspx.cs">
+      <DependentUpon>BH_Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BH_Login.aspx.designer.cs">
+      <DependentUpon>BH_Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate.Master.cs">
+      <DependentUpon>Candidate.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate.Master.designer.cs">
+      <DependentUpon>Candidate.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate_Index.aspx.cs">
+      <DependentUpon>Candidate_Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate_Index.aspx.designer.cs">
+      <DependentUpon>Candidate_Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="HO_Admin.Master.cs">
+      <DependentUpon>HO_Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HO_Admin.Master.designer.cs">
+      <DependentUpon>HO_Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="HO_Admin\H_Login.aspx.cs">
+      <DependentUpon>H_Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HO_Admin\H_Login.aspx.designer.cs">
+      <DependentUpon>H_Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HO_Admin\H_notific.aspx.cs">
+      <DependentUpon>H_notific.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HO_Admin\H_notific.aspx.designer.cs">
+      <DependentUpon>H_notific.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HO_Admin\H_Verify.aspx.cs">
+      <DependentUpon>H_Verify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HO_Admin\H_Verify.aspx.designer.cs">
+      <DependentUpon>H_Verify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HO_Website\candidate_photo_HO.aspx.cs">
+      <DependentUpon>candidate_photo_HO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HO_Website\candidate_photo_HO.aspx.designer.cs">
+      <DependentUpon>candidate_photo_HO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HO_Website\Doc_Scanning_HO.aspx.cs">
+      <DependentUpon>Doc_Scanning_HO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HO_Website\Doc_Scanning_HO.aspx.designer.cs">
+      <DependentUpon>Doc_Scanning_HO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HO_Website\Experience_HO.aspx.cs">
+      <DependentUpon>Experience_HO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HO_Website\Experience_HO.aspx.designer.cs">
+      <DependentUpon>Experience_HO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HO_Website\family_status_HO.aspx.cs">
+      <DependentUpon>family_status_HO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HO_Website\family_status_HO.aspx.designer.cs">
+      <DependentUpon>family_status_HO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HO_Website\HoWebsites.aspx.cs">
+      <DependentUpon>HoWebsites.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HO_Website\HoWebsites.aspx.designer.cs">
+      <DependentUpon>HoWebsites.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HO_Website\Job_Search.aspx.cs">
+      <DependentUpon>Job_Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HO_Website\Job_Search.aspx.designer.cs">
+      <DependentUpon>Job_Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HO_Website\Login_HO.aspx.cs">
+      <DependentUpon>Login_HO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HO_Website\Login_HO.aspx.designer.cs">
+      <DependentUpon>Login_HO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HO_Website\Personal_Details_HO.aspx.cs">
+      <DependentUpon>Personal_Details_HO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HO_Website\Personal_Details_HO.aspx.designer.cs">
+      <DependentUpon>Personal_Details_HO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HO_Website\Personal_Info_HO.aspx.cs">
+      <DependentUpon>Personal_Info_HO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HO_Website\Personal_Info_HO.aspx.designer.cs">
+      <DependentUpon>Personal_Info_HO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HO_Website\qualification_HO.aspx.cs">
+      <DependentUpon>qualification_HO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HO_Website\qualification_HO.aspx.designer.cs">
+      <DependentUpon>qualification_HO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HO_Website\Reference_per_HO.aspx.cs">
+      <DependentUpon>Reference_per_HO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HO_Website\Reference_per_HO.aspx.designer.cs">
+      <DependentUpon>Reference_per_HO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JSONConvert.cs" />
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logout_Admin.aspx.cs">
+      <DependentUpon>logout_Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logout_Admin.aspx.designer.cs">
+      <DependentUpon>logout_Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logout_HO.aspx.cs">
+      <DependentUpon>logout_HO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logout_HO.aspx.designer.cs">
+      <DependentUpon>logout_HO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Main_HO.Master.cs">
+      <DependentUpon>Main_HO.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main_HO.Master.designer.cs">
+      <DependentUpon>Main_HO.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Opprtunity.aspx.cs">
+      <DependentUpon>Opprtunity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Opprtunity.aspx.designer.cs">
+      <DependentUpon>Opprtunity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Oppurtunity_HO.aspx.cs">
+      <DependentUpon>Oppurtunity_HO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Oppurtunity_HO.aspx.designer.cs">
+      <DependentUpon>Oppurtunity_HO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Recruitment\Aadharupload.aspx.cs">
+      <DependentUpon>Aadharupload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recruitment\Aadharupload.aspx.designer.cs">
+      <DependentUpon>Aadharupload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Recruitment\candidate_photo.aspx.cs">
+      <DependentUpon>candidate_photo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recruitment\candidate_photo.aspx.designer.cs">
+      <DependentUpon>candidate_photo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Recruitment\family_status.aspx.cs">
+      <DependentUpon>family_status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recruitment\family_status.aspx.designer.cs">
+      <DependentUpon>family_status.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Recruitment\ImageConversions.aspx.cs">
+      <DependentUpon>ImageConversions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recruitment\ImageConversions.aspx.designer.cs">
+      <DependentUpon>ImageConversions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Recruitment\online_test_page.aspx.cs">
+      <DependentUpon>online_test_page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recruitment\online_test_page.aspx.designer.cs">
+      <DependentUpon>online_test_page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Recruitment\photoup.aspx.cs">
+      <DependentUpon>photoup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recruitment\photoup.aspx.designer.cs">
+      <DependentUpon>photoup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Recruitment\QRCode_Reader.aspx.cs">
+      <DependentUpon>QRCode_Reader.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recruitment\QRCode_Reader.aspx.designer.cs">
+      <DependentUpon>QRCode_Reader.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Recruitment\BH_notific.aspx.cs">
+      <DependentUpon>BH_notific.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recruitment\BH_notific.aspx.designer.cs">
+      <DependentUpon>BH_notific.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Recruitment\BH_Verify.aspx.cs">
+      <DependentUpon>BH_Verify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recruitment\BH_Verify.aspx.designer.cs">
+      <DependentUpon>BH_Verify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Recruitment\Doc_Scanning.aspx.cs">
+      <DependentUpon>Doc_Scanning.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recruitment\Doc_Scanning.aspx.designer.cs">
+      <DependentUpon>Doc_Scanning.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Recruitment\Personal_Details.aspx.cs">
+      <DependentUpon>Personal_Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recruitment\Personal_Details.aspx.designer.cs">
+      <DependentUpon>Personal_Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Recruitment\Personal_Info.aspx.cs">
+      <DependentUpon>Personal_Info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recruitment\Personal_Info.aspx.designer.cs">
+      <DependentUpon>Personal_Info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Recruitment\Photo_Upload.aspx.cs">
+      <DependentUpon>Photo_Upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recruitment\Photo_Upload.aspx.designer.cs">
+      <DependentUpon>Photo_Upload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Recruitment\qualification.aspx.cs">
+      <DependentUpon>qualification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recruitment\qualification.aspx.designer.cs">
+      <DependentUpon>qualification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Recruitment\Reference_per.aspx.cs">
+      <DependentUpon>Reference_per.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recruitment\Reference_per.aspx.designer.cs">
+      <DependentUpon>Reference_per.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Salary\common_nomination_form.aspx.cs">
+      <DependentUpon>common_nomination_form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Salary\common_nomination_form.aspx.designer.cs">
+      <DependentUpon>common_nomination_form.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Main.Master" />
+    <Content Include="App_Themes\Theme\assets\css\font\fontawesome-webfontd41d.eot" />
+    <Content Include="App_Themes\Theme\assets\css\font\fontawesome-webfontf77b.eot" />
+    <Content Include="App_Themes\Theme\assets\css\font\fontawesome-webfontf77b.ttf" />
+    <Content Include="App_Themes\Theme\assets\css\font\fontawesome-webfontf77b.woff" />
+    <Content Include="App_Themes\Theme\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="App_Themes\Theme\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="App_Themes\Theme\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="App_Themes\Theme\bootstrap\fonts\glyphicons-halflings-regulard41d.eot" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Captures\" />
+    <Folder Include="Mapsuite\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63804</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:63804/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
