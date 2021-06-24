@@ -562,19 +562,24 @@ namespace Ma_Aspirant.Recruitment
             string s = ds1.Rows[0][1].ToString();
             if (s != "0")
             {
-                SmtpClient server = new SmtpClient("smtp.office365.com");
+
+               // ServiceReference1.ServiceClient obj = new ServiceReference1.ServiceClient();
+                DataTable ds2 = new DataTable();
+                ds2 = obj.proc_hrm_common_select("60", "2", "0");
+                if (ds2.Rows.Count > 0)
+                {
+                    SmtpClient server = new SmtpClient("smtp.office365.com");
                 server.Port = 587;
                 server.EnableSsl = true;
                 server.UseDefaultCredentials = false;
-                //server.Credentials = new System.Net.NetworkCredential("55323@manappuram.com", "Winter123*", "smtp.office365.com"); 
-                server.Credentials = new System.Net.NetworkCredential("hralerts@manappuram.com", "BR$234%t", "smtp.office365.com");
-                server.Timeout = 5000;
+                    server.Credentials = new System.Net.NetworkCredential(ds2.Rows[0][0].ToString(), ds2.Rows[0][1].ToString(), "smtp.office365.com");
+                    server.Timeout = 5000;
                 server.TargetName = "STARTTLS/smtp.office365.com";
                 server.DeliveryMethod = SmtpDeliveryMethod.Network;
                 MailMessage mail = new MailMessage();
-                mail.From = new MailAddress("hralerts@manappuram.com");
-                //  ----------------------------------------------mail body creation----------------------------------------------
-                mail.Subject = " Manappuram Recruitment";
+                    mail.From = new MailAddress(ds2.Rows[0][0].ToString());
+                    //  ----------------------------------------------mail body creation----------------------------------------------
+                    mail.Subject = " Manappuram Recruitment";
                 mail.IsBodyHtml = false;
                 //  mail.Body = "Dear  " + name + "," + " \r\n\r\n  Your Interview scheduled at Manappuram Branch " + brname + " on " + date + " at" + time + ". \r\n Please use application number " + code + " to login to our site https://online.manappuram.com/Recruitment/Login.aspx and  \r\n complete the shortlisting process (upload documents,add personal and qualification details) and bring all mandatory documents you uploaded in the website.\r\n   Documents :\r\nQualification Certificate,Pancard,Aadhar Card,Bank PassBook,Voter ID,Address Proof";
                 mail.Body = "Dear  BH, \r\n\r\n Notification to schedule an Interview. Please visit the website!! . \r\n\r\n  login to our site https://online.manappuram.com/Recruitment/BH_Login.aspx";
@@ -584,6 +589,12 @@ namespace Ma_Aspirant.Recruitment
                 server.Send(mail);
                 string Msg = "Mail and SMS Send successfully";
                 return Msg;
+                }
+                else
+                {
+                    string Msg = "No Access";
+                    return Msg;
+                }
             }
             else
             {
@@ -1046,7 +1057,14 @@ namespace Ma_Aspirant.Recruitment
          [WebMethod(EnableSession = true)]
          public static string sendOTPfn_mail(string number)
          {
-             string s = "", Msg = "";
+
+            ServiceReference1.ServiceClient obj = new ServiceReference1.ServiceClient();
+            DataTable ds2 = new DataTable();
+            ds2 = obj.proc_hrm_common_select("60", "2", "0");
+            if (ds2.Rows.Count > 0)
+            {
+
+                string s = "", Msg = "";
              pass = GetRandomStringpass(6);//generate OTP
             // pass = "1234";
              HttpContext.Current.Session["otp"] = pass;
@@ -1056,25 +1074,24 @@ namespace Ma_Aspirant.Recruitment
                      server.Port = 587;
                      server.EnableSsl = true;
                      server.UseDefaultCredentials = false;
-                     //server.Credentials = new System.Net.NetworkCredential("55323@manappuram.com", "Winter123*", "smtp.office365.com"); 
-                     server.Credentials = new System.Net.NetworkCredential("hralerts@manappuram.com", "BR$234%t", "smtp.office365.com");
-                     server.Timeout = 5000;
+                server.Credentials = new System.Net.NetworkCredential(ds2.Rows[0][0].ToString(), ds2.Rows[0][1].ToString(), "smtp.office365.com");
+                server.Timeout = 5000;
                      server.TargetName = "STARTTLS/smtp.office365.com";
                      server.DeliveryMethod = SmtpDeliveryMethod.Network;
                      MailMessage mail = new MailMessage();
-                     mail.From = new MailAddress("hralerts@manappuram.com");
+                mail.From = new MailAddress(ds2.Rows[0][0].ToString());
 
 
-                    
-                     //  ----------------------------------------------mail body creation----------------------------------------------
-                    
-                         mail.Subject = " Manappuram Recruitment";
+
+                //  ----------------------------------------------mail body creation----------------------------------------------
+
+                mail.Subject = " Manappuram Recruitment";
                          mail.IsBodyHtml = false;
                          mail.Body = "Dear  Candidate," + " \r\n\r\n " + "Your One time Password for verifying Email address " + pass;
                          System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls | System.Net.SecurityProtocolType.Tls11 | System.Net.SecurityProtocolType.Tls12;
                          mail.To.Add(number);
                          DataTable ds = new DataTable();
-                         ServiceReference1.ServiceClient obj = new ServiceReference1.ServiceClient();
+                        // ServiceReference1.ServiceClient obj = new ServiceReference1.ServiceClient();
                          string data = number + '~' + pass;
                          System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls | System.Net.SecurityProtocolType.Tls11 | System.Net.SecurityProtocolType.Tls12;
 
@@ -1090,7 +1107,13 @@ namespace Ma_Aspirant.Recruitment
                      Msg = "Mail Send";
 
                      return Msg;
-         }
+            }
+            else
+            {
+                string Msg = "No Access";
+                return Msg;
+            }
+        }
 
          [WebMethod]
          public static string loginauth_mail(string otp)

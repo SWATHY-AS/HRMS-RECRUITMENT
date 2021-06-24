@@ -165,41 +165,51 @@ namespace Ma_Aspirant.Recruitment
         [WebMethod(EnableSession = true)]
         public static string sendOTPfn_mail(string number)
         {
-            string s = "", Msg = "";
-            string[] qq = number.Split('~');
-            // ---------------------------------------------MAIL1 PART----------------------------------------------
-            // string msg = retunmsg;
-            SmtpClient server = new SmtpClient("smtp.office365.com");
-            server.Port = 587;
-            server.EnableSsl = true;
-            server.UseDefaultCredentials = false;
-            //server.Credentials = new System.Net.NetworkCredential("55323@manappuram.com", "Winter123*", "smtp.office365.com"); 
-            server.Credentials = new System.Net.NetworkCredential("hralerts@manappuram.com", "BR$234%t", "smtp.office365.com");
-            server.Timeout = 5000;
-            server.TargetName = "STARTTLS/smtp.office365.com";
-            server.DeliveryMethod = SmtpDeliveryMethod.Network;
-            MailMessage mail = new MailMessage();
-            mail.From = new MailAddress("hralerts@manappuram.com");
-
-
-
-            //  ----------------------------------------------mail body creation----------------------------------------------
-
-            mail.Subject = " Manappuram Recruitment";
-            mail.IsBodyHtml = false;
-            mail.Body = "Dear  BH," + " \r\n\r\n " + qq[1]+"("+qq[0]+") Candidate completed updating his/her details. ";
-            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls | System.Net.SecurityProtocolType.Tls11 | System.Net.SecurityProtocolType.Tls12;
-            mail.To.Add(qq[2]);
-            DataTable ds = new DataTable();
             ServiceReference1.ServiceClient obj = new ServiceReference1.ServiceClient();
-            string data = number;
-          //  System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls | System.Net.SecurityProtocolType.Tls11 | System.Net.SecurityProtocolType.Tls12;
-           // ds = obj.proc_hrm_common_select("16", "35", qq[1]);
-                     mail.IsBodyHtml = false;
-            server.Send(mail);
-            Msg = "Mail Send";
+            DataTable ds2 = new DataTable();
+            ds2 = obj.proc_hrm_common_select("60", "2", "0");
+            if (ds2.Rows.Count > 0)
+            {
+                string s = "", Msg = "";
+                string[] qq = number.Split('~');
+                // ---------------------------------------------MAIL1 PART----------------------------------------------
+                // string msg = retunmsg;
+                SmtpClient server = new SmtpClient("smtp.office365.com");
+                server.Port = 587;
+                server.EnableSsl = true;
+                server.UseDefaultCredentials = false;
+                server.Credentials = new System.Net.NetworkCredential(ds2.Rows[0][0].ToString(), ds2.Rows[0][1].ToString(), "smtp.office365.com");
+                server.Timeout = 5000;
+                server.TargetName = "STARTTLS/smtp.office365.com";
+                server.DeliveryMethod = SmtpDeliveryMethod.Network;
+                MailMessage mail = new MailMessage();
+                mail.From = new MailAddress(ds2.Rows[0][0].ToString());
 
-            return Msg;
+
+
+                //  ----------------------------------------------mail body creation----------------------------------------------
+
+                mail.Subject = " Manappuram Recruitment";
+                mail.IsBodyHtml = false;
+                mail.Body = "Dear  BH," + " \r\n\r\n " + qq[1] + "(" + qq[0] + ") Candidate completed updating his/her details. ";
+                System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls | System.Net.SecurityProtocolType.Tls11 | System.Net.SecurityProtocolType.Tls12;
+                mail.To.Add(qq[2]);
+                DataTable ds = new DataTable();
+               // ServiceReference1.ServiceClient obj = new ServiceReference1.ServiceClient();
+                string data = number;
+                //  System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls | System.Net.SecurityProtocolType.Tls11 | System.Net.SecurityProtocolType.Tls12;
+                // ds = obj.proc_hrm_common_select("16", "35", qq[1]);
+                mail.IsBodyHtml = false;
+                server.Send(mail);
+                Msg = "Mail Send";
+
+                return Msg;
+            }
+            else
+            {
+                string Msg = "No Access";
+                return Msg;
+            }
         }
         [WebMethod(EnableSession = true)]
         public static string test_checking(string input)
